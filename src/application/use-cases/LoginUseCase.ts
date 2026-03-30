@@ -22,7 +22,7 @@ export class LoginUseCase {
         }
 
         const token = jwt.sign({
-            id: user.id,
+            id: user._id,
             email: user.email,
             name: user.name
         },
@@ -33,7 +33,7 @@ export class LoginUseCase {
         return {
             token,
             user: {
-                id: user.id,
+                id: user._id,
                 email: user.email,
                 name: user.name,
                 isActive: user.isActive,

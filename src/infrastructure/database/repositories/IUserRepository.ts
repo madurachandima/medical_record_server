@@ -11,13 +11,14 @@ export class MongoUserRepository implements IUserRepository {
         const user = await UserModel.findOne({ email });
         return user ? user.toObject() : null;
     }
-    findById(id: string): Promise<IUser | null> {
+    async findById(id: string): Promise<IUser | null> {
+        const user = await UserModel.findById(id);
+        return user ? user.toObject() : null;
+    }
+    async update(id: string, user: Partial<IUser>): Promise<IUser | null> {
         throw new Error("Method not implemented.");
     }
-    update(id: string, user: Partial<IUser>): Promise<IUser | null> {
-        throw new Error("Method not implemented.");
-    }
-    delete(id: string): Promise<boolean> {
+    async delete(id: string): Promise<boolean> {
         throw new Error("Method not implemented.");
     }
 } 
