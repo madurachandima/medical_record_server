@@ -7,11 +7,11 @@ export class MongoUserProfileRepository implements IEditProfileRepository {
         const created = await UserProfileModel.create(profile);
         return created.toObject();
     }
-    async update(id: string, profile: IUserProfile): Promise<IUserProfile> {
+    async update(id: string, profile: IUserProfile): Promise<IUserProfile | null> {
         const updated = await UserProfileModel.findByIdAndUpdate(id, profile, { new: true });
         return updated ? updated.toObject() : null;
     }
-    async get(userId: string): Promise<IUserProfile> {
+    async get(userId: string): Promise<IUserProfile | null> {
        const userProfile = await UserProfileModel.findOne({ userId });
        return userProfile ? userProfile.toObject() : null;
     }

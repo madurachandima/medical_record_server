@@ -23,7 +23,7 @@ export class EditProfileUseCase {
 
         if (existingProfile) {
             const updatedProfile = await this.editProfileRepository.update(dto.userId, {
-                dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : null,
+                dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : undefined,
                 bloodGroup: dto.bloodGroup,
                 gender: dto.gender,
                 email: dto.email,
@@ -34,7 +34,7 @@ export class EditProfileUseCase {
         } else {
             const createdProfile = await this.editProfileRepository.create({
                 userId: dto.userId,
-                dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : null,
+                dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : undefined,
                 bloodGroup: dto.bloodGroup,
                 gender: dto.gender,
                 email: dto.email,
