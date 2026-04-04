@@ -1,4 +1,4 @@
-import { IUserProfile } from "domain/entities/userProfile";
+import { IUserProfile } from "@domain/entities/userProfile";
 import mongoose, { Schema } from "mongoose";
 
 export interface IUserProfileModel extends IUserProfile, Document { }

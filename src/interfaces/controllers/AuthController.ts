@@ -1,7 +1,7 @@
-import { RegisterUseCase } from "../../application/use-cases/RegisterUseCase";
+import { RegisterUseCase } from "@application/use-cases/RegisterUseCase";
 import { NextFunction, Request, Response } from "express";
-import { MongoUserRepository } from "../../infrastructure/database/repositories/IUserRepository";
-import { LoginUseCase } from "../../application/use-cases/LoginUseCase";
+import { MongoUserRepository } from "@infrastructure/database/repositories/IUserRepository";
+import { LoginUseCase } from "@application/use-cases/LoginUseCase";
 import { json } from "body-parser";
 
 

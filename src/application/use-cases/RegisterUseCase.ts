@@ -1,5 +1,5 @@
-import { IUserRepository } from "../../domain/repositories/IUserRepository";
-import { passwordHasher } from "../../shared/utils/passwordHasher";
+import { IUserRepository } from "@domain/repositories/IUserRepository";
+import { passwordHasher } from "@shared/utils/passwordHasher";
 
 export interface RegisterDTO {
     name: string;

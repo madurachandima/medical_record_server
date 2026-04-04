@@ -1,4 +1,4 @@
-import { IEditProfileRepository } from "../../domain/repositories/IEditProfileRepository";
+import { IEditProfileRepository } from "@domain/repositories/IEditProfileRepository";
 
 
 export class GetProfileUseCase {

@@ -1,5 +1,5 @@
-import { passwordHasher } from "../../shared/utils/passwordHasher";
-import { IUserRepository } from "../../domain/repositories/IUserRepository";
+import { passwordHasher } from "@shared/utils/passwordHasher";
+import { IUserRepository } from "@domain/repositories/IUserRepository";
 import jwt from "jsonwebtoken";
 export interface LoginDTO {
     email: string,

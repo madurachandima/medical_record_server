@@ -1,4 +1,4 @@
-import {IUserProfile} from "../entities/userProfile";
+import {IUserProfile} from "@domain/entities/userProfile";
 
 
 

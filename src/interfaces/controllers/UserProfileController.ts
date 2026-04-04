@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { EditProfileUseCase } from "../../application/use-cases/EditProfileUseCase";
-import { GetProfileUseCase } from "../../application/use-cases/GetProfileUseCase";
-import { MongoUserProfileRepository } from "../../infrastructure/database/repositories/IUserProfileRepository";
+import { EditProfileUseCase } from "@application/use-cases/EditProfileUseCase";
+import { GetProfileUseCase } from "@application/use-cases/GetProfileUseCase";
+import { MongoUserProfileRepository } from "@infrastructure/database/repositories/IUserProfileRepository";
 
 export class UserProfileController {
     private editProfileUserCase: EditProfileUseCase;

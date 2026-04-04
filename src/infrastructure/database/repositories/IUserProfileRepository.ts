@@ -1,6 +1,6 @@
-import { IUserProfile } from "domain/entities/userProfile";
-import { IEditProfileRepository } from "../../../domain/repositories/IEditProfileRepository";
-import { UserProfileModel } from "../models/UserProfileModel";
+import { IUserProfile } from "@domain/entities/userProfile";
+import { IEditProfileRepository } from "@domain/repositories/IEditProfileRepository";
+import { UserProfileModel } from "@infrastructure/database/models/UserProfileModel";
 
 export class MongoUserProfileRepository implements IEditProfileRepository {
     async create(profile: IUserProfile): Promise<IUserProfile> {

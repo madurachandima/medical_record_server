@@ -1,6 +1,6 @@
-import { IUser } from "domain/entities/User";
-import { IUserRepository } from "domain/repositories/IUserRepository";
-import { UserModel } from "../models/UserModel";
+import { IUser } from "@domain/entities/User";
+import { IUserRepository } from "@domain/repositories/IUserRepository";
+import { UserModel } from "@infrastructure/database/models/UserModel";
 
 export class MongoUserRepository implements IUserRepository {
     async create(user: IUser): Promise<IUser> {

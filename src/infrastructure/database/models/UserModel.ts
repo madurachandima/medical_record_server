@@ -1,4 +1,4 @@
-import { IUser } from "domain/entities/User";
+import { IUser } from "@domain/entities/User";
 import mongoose, { Schema } from "mongoose";
 
 export interface IUserModel extends IUser, Document { }
