@@ -1,11 +1,11 @@
 {
   "name": "medical_record_server",
-  "version": "1.0.1",
-  "main": "src/dist/server.js",
+  "version": "1.0.2",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node -r tsconfig-paths/register src/server.ts",
-    "build": "rimraf src/dist && tsc && tsc-alias",
-    "start": "node src/dist/server.js"
+    "build": "rimraf dist && tsc && tsc-alias",
+    "start": "node dist/server.js"
   },
   "engines": {
     "node": ">=20"
