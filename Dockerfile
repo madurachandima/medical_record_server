@@ -9,18 +9,20 @@ COPY package*.json ./
 # Install all dependencies (including devDependencies)
 RUN npm install
 
-# Copy source code and config
+# Copy source code and configuration
 COPY . .
 
-# Build the application
-RUN npm run build
+# Explicit build step using npx to ensure tools are found
+RUN npx rimraf dist && \
+    npx tsc && \
+    npx tsc-alias
 
 # Production Stage
 FROM node:20-alpine AS production
 
 WORKDIR /app
 
-# Copy package files
+# Copy package files for production install
 COPY package*.json ./
 
 # Install only production dependencies
@@ -29,9 +31,9 @@ RUN npm install --omit=dev
 # Copy compiled files from builder stage
 COPY --from=builder /app/dist ./dist
 
-# Expose the port (Back4app usually uses 80 or 3000, but often binds to $PORT)
+# Standard port for local testing, overridden by Back4app with $PORT
 ENV PORT=3000
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "start"]
+# Run the app
+CMD ["node", "dist/server.js"]
